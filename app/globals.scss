@@ -1,0 +1,74 @@
+:root {
+  --foreground-rgb: 0, 0, 0;
+  --background-start-rgb: 214, 219, 220;
+  --background-end-rgb: 255, 255, 255;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --foreground-rgb: 255, 255, 255;
+    --background-start-rgb: 0, 0, 0;
+    --background-end-rgb: 0, 0, 0;
+  }
+}
+html {
+  font-size: 62.5%;
+}
+
+body {
+  font-size: 1.6rem;
+  font-family: 'Roboto', sans-serif;
+  padding: 0 2rem;
+  color: rgb(var(--foreground-rgb));
+
+  .nav {
+    ul {
+      display: flex;
+      padding-inline-start: 0;
+      justify-content: space-around;
+      list-style: none;
+    }
+    margin-bottom: 5rem;
+  }
+
+  form {
+    label {
+      margin-right: 0.5rem;
+    }
+  }
+
+  input[type='text'],
+  input[type='number'] input[type='files'] {
+    border: 1px solid rgb(var(--foreground-rgb));
+    border-radius: 0.25rem;
+    height: 2rem;
+  }
+
+  .time-slot {
+    input {
+      margin-right: 2rem;
+    }
+  }
+
+  #start {
+    margin-top: 2rem;
+  }
+  button {
+    padding: 0 1rem;
+    font-weight: 900;
+    border: 2px solid black;
+    border-radius: 0.5rem;
+  }
+  .progress {
+    margin-top: 2rem;
+    color: lightcoral;
+    .folder {
+      color: lightgreen;
+      font-weight: 900;
+    }
+  }
+
+  .hide {
+    display: none;
+  }
+}
