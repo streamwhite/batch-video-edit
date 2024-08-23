@@ -4,8 +4,10 @@
 
 ### Prerequisites(for non-developer)
 
-Install NodeJS runtime, refer to [NodeJS](https://nodejs.org/en/download/prebuilt-installer)
-Install ffmpeg, refer to [ffmpeg](https://www.ffmpeg.org/download.html)
+Install NodeJS runtime, refer to [NodeJS](https://nodejs.org/en/download/prebuilt-installer).
+Install ffmpeg, refer to [ffmpeg](https://www.ffmpeg.org/download.html).
+Install git, refer to [git](https://git-scm.com/downloads).
+
 If you have any issues, search internet for tutorial to your specific operation system.
 
 notes: copy those command and paste it in terminal(CMD or Powershell on Windows)(then press enter to run it).
@@ -14,13 +16,13 @@ notes: copy those command and paste it in terminal(CMD or Powershell on Windows)
    git clone https://github.com/streamwhite/batch-video-clips.git
 2. go to the project folder after cloning, with command:
    cd batch-video-clips
-3. install dependencies with command:
+3. install dependencies with command(yarn or pnpm will be fine):
    npm install
 4. build the project with command:
    npm run build
-5. start the project with command:
+5. start the project with command(you need only following steps to run for future usage):
    npm run start
-6. open http://localhost:3000/ in your browser, it may take a while to load.
+6. open http://localhost:3000/ in your browser, it take seconds to load.
 7. start clip videos.
 
 ## need your help
@@ -37,4 +39,4 @@ commercial use
 
 ## FAQ
 
-check typo
+check typo, complete resume, adjust format for sentences and lisence and how to update.
