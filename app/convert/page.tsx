@@ -5,6 +5,8 @@ const { useState } = React;
 
 export default function Home() {
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
+  // add state 'isInProgress' to disable the start button when the conversion is in progress
+  const [isInProgress, setIsInProgress] = useState<boolean>(false);
   return (
     <div>
       <h1>Convert videos to MP4</h1>
@@ -17,7 +19,9 @@ export default function Home() {
             <button
               id='start'
               type='submit'
+              disabled={isInProgress}
               onClick={(e) => {
+                setIsInProgress(true);
                 setIsCompleted(false);
                 e.preventDefault();
                 const form = document.getElementById(
@@ -28,6 +32,7 @@ export default function Home() {
                   if (res?.isCompleted) {
                     setIsCompleted(true);
                   }
+                  setIsInProgress(false);
                 });
               }}
             >

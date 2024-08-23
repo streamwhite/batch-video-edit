@@ -1,7 +1,6 @@
 'use server';
 
 import path from 'path';
-import pino from 'pino';
 import { clip } from '../_lib/clip';
 import { batchCompress } from '../_lib/compress';
 import { concatCTA as mergeCTA } from '../_lib/concat-cta';
@@ -9,18 +8,14 @@ import { batchConvert } from '../_lib/convert';
 import { recoverFileName } from '../_lib/file-naming';
 import * as wrappedFs from '../_lib/fs';
 import { deleteFolderRecursive } from '../_lib/fs';
+import { createLogger } from '../_lib/logger';
 import { screenshotsWithInterval } from '../_lib/screenshotsWithInterval';
 import { getVideosAndClips } from '../_lib/utils';
 import { renameIphoneVideosWithMeta } from '../rename-with-meta';
 
 const uploadPath = 'uploads';
 
-const logger = pino(
-  {
-    level: 'info',
-  },
-  pino.destination('./pino-logger.log')
-);
+const logger = createLogger();
 
 export async function clipVideos(formData: FormData) {
   const { videos, clips } = getVideosAndClips(formData);

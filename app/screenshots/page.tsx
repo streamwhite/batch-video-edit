@@ -5,6 +5,8 @@ const { useState } = React;
 
 export default function Home() {
   const [isCompleted, setIsCompleted] = useState<boolean>(false);
+  const [isInProgress, setIsInProgress] = useState<boolean>(false);
+
   return (
     <div>
       <h1>take screenshot with interval</h1>
@@ -25,7 +27,9 @@ export default function Home() {
             <button
               id='start'
               type='submit'
+              disabled={isInProgress}
               onClick={(e) => {
+                setIsInProgress(true);
                 e.preventDefault();
                 setIsCompleted(false);
                 const form = document.getElementById(
@@ -36,6 +40,7 @@ export default function Home() {
                   if (res?.isCompleted) {
                     setIsCompleted(true);
                   }
+                  setIsInProgress(false);
                 });
               }}
             >

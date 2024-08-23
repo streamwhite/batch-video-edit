@@ -31,6 +31,7 @@ export async function batchConvert(inputPath: string, outPutPath: string) {
 
 function isVideo(fileName: string): boolean {
   return (
+    // nicetohave use file-type pkg
     fileName.endsWith('.mp4') ||
     fileName.endsWith('.avi') ||
     fileName.endsWith('.mkv') ||
