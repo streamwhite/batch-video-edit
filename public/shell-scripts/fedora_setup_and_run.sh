@@ -6,11 +6,28 @@ install_dependencies() {
     echo "Updating package list..."
     sudo dnf update -y
 
-    # Check if Node.js is installed
+     # Install curl if not already installed
+    if ! command -v curl &> /dev/null; then
+        echo "Installing curl..."
+        sudo dnf install -y curl
+    else
+        echo "curl is already installed."
+    fi
+
+    # install nvm
+    if ! command -v nvm &> /dev/null; then
+        echo "Installing nvm..."
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh  | bash
+        . ~/.bashrc
+    else
+        echo "nvm is already installed."
+    fi
+
+    # Install Node.js if not already installed
     if ! command -v node &> /dev/null; then
-        # Install Node.js
         echo "Installing Node.js..."
-        sudo dnf install -y nodejs npm
+        nvm install --lts
+        nvm use --lts
     else
         echo "Node.js is already installed."
     fi
@@ -19,7 +36,9 @@ install_dependencies() {
     if ! command -v ffmpeg &> /dev/null; then
         # Install FFmpeg
         echo "Installing FFmpeg..."
-        sudo dnf install -y ffmpeg
+        sudo dnf install https://download1.rpmfusion.org/free/fedora/rpmfusion-free-release-$(rpm -E %fedora).noarch.rpm
+        sudo dnf update
+        sudo dnf install ffmpeg
     else
         echo "FFmpeg is already installed."
     fi
