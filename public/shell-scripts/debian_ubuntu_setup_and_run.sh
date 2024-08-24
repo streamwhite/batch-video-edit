@@ -23,13 +23,11 @@ install_dependencies() {
         echo "nvm is already installed."
     fi
 
-    # reload bashrc
-    exec $SHELL
-
     # Install Node.js if not already installed
     if ! command -v node &> /dev/null; then
         echo "Installing Node.js..."
         nvm install --lts
+        nvm use --lts
     else
         echo "Node.js is already installed."
     fi

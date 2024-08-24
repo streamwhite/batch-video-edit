@@ -3,6 +3,7 @@ import { join } from 'path';
 import { recoverFileName } from '../_lib/file-naming';
 
 import fs from 'fs';
+import { createLogger } from './logger';
 
 async function writeFileAsync(file: File, folder: string = 'uploads') {
   const filePath = join(folder, recoverFileName(file));
@@ -15,7 +16,11 @@ function ensureDirAsync(folder: string) {
 }
 
 async function deleteFolderRecursive(path: string) {
-  await $(`rm -rf ${path}`);
+  try {
+    await $(`rm -rf ${path}`);
+  } catch (error) {
+    createLogger().error('An error occurred:', error);
+  }
 }
 
 export { deleteFolderRecursive, ensureDirAsync, writeFileAsync };
