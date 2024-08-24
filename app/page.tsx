@@ -94,11 +94,9 @@ export default function Home() {
     setIsInClipping(true);
     setIsComplete(false);
     clipVideos(formData).then((res) => {
-      if (res?.isCompleted) {
-        timeUsedRef.current = Date.now() - clippingStartTimeRef.current;
-        setIsComplete(true);
-        setIsInClipping(false);
-      }
+      timeUsedRef.current = Date.now() - clippingStartTimeRef.current;
+      setIsComplete(true);
+      setIsInClipping(false);
     });
   }
 

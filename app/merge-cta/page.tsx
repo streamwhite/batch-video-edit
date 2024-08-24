@@ -32,9 +32,7 @@ export default function Home() {
                 ) as HTMLFormElement;
                 const formData = new FormData(form);
                 concatCTA(formData).then((res) => {
-                  if (res?.isCompleted) {
-                    setIsCompleted(true);
-                  }
+                  setIsCompleted(true);
                   setIsInProgress(false);
                 });
               }}

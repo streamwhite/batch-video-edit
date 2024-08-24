@@ -18,13 +18,21 @@ install_dependencies() {
     if ! command -v nvm &> /dev/null; then
         echo "Installing nvm..."
         curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh  | bash
-        source ~/.bashrc
+        . ~/.bashrc
     else
         echo "nvm is already installed."
     fi
 
     # reload bashrc
     exec $SHELL
+
+    # Install Node.js if not already installed
+    if ! command -v node &> /dev/null; then
+        echo "Installing Node.js..."
+        nvm install --lts
+    else
+        echo "Node.js is already installed."
+    fi
 
 
     # Install FFmpeg if not already installed

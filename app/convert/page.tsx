@@ -29,9 +29,7 @@ export default function Home() {
                 ) as HTMLFormElement;
                 const formData = new FormData(form);
                 convertVideos(formData).then((res) => {
-                  if (res?.isCompleted) {
-                    setIsCompleted(true);
-                  }
+                  setIsCompleted(true);
                   setIsInProgress(false);
                 });
               }}

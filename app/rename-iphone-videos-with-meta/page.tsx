@@ -28,9 +28,7 @@ export default function Home() {
                 ) as HTMLFormElement;
                 const formData = new FormData(form);
                 renameVideosWithMeta(formData).then((res) => {
-                  if (res?.isCompleted) {
-                    setIsCompleted(true);
-                  }
+                  setIsCompleted(true);
                   setIsInProgress(false);
                 });
               }}
