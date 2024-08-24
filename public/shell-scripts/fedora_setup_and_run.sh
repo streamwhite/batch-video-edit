@@ -28,7 +28,7 @@ install_dependencies
 
 # Step 1: Clone the project
 echo "Cloning the project..."
-git clone https://github.com/streamwhite/batch-video-clips.git
+git clone https://github.com/streamwhite/batch-video-edit.git
 
 # Step 2: Go to the project folder
 echo "Navigating to the project folder..."

@@ -13,7 +13,7 @@ If you have any issues, search internet for tutorial to your specific operation 
 notes: copy those command and paste it in terminal(CMD or Powershell on Windows)(then press enter to run it).
 
 1. clone this project in terminal, with command:
-   `git clone https://github.com/streamwhite/batch-video-clips.git`
+   `git clone https://github.com/streamwhite/batch-video-edit.git`
 2. go to the project folder after cloning, with command:
    `cd batch-video-clips`
 3. install dependencies with command(yarn or pnpm will be fine):

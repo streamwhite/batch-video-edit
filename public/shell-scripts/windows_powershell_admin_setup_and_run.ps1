@@ -33,7 +33,7 @@ Install-PackageIfNotInstalled -packageName "git"
 
 # Step 1: Clone the project
 Write-Output "Cloning the project..."
-git clone https://github.com/streamwhite/batch-video-clips.git
+git clone https://github.com/streamwhite/batch-video-edit.git
 
 # Step 2: Go to the project folder
 Write-Output "Navigating to the project folder..."
