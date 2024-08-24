@@ -6,3 +6,9 @@ Run the script: ./setup_and_run.sh.
 Open PowerShell as an administrator.
 
 on windows, if you have installed a specific package, you don't need to install it again.
+
+sections: set up
+
+run it
+
+update it
