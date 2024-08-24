@@ -51,7 +51,7 @@ export async function convertVideos(formData: FormData) {
       logger.error('An error occurred:', error);
     }
   }
-  const outPutFolder = 'output';
+  const outPutFolder = createOutputFolder();
 
   try {
     await batchConvert(uploadPath, outPutFolder);
@@ -76,7 +76,7 @@ export async function concatCTA(formData: FormData) {
       logger.error('An error occurred:', error);
     }
   }
-  const outPutFolder = 'output';
+  const outPutFolder = createOutputFolder();
 
   try {
     await mergeCTA({
@@ -105,7 +105,7 @@ export async function compressVideos(formData: FormData) {
       logger.error('An error occurred:', error);
     }
   }
-  const outPutFolder = 'output';
+  const outPutFolder = createOutputFolder();
 
   try {
     await batchCompress(uploadPath, outPutFolder);
@@ -129,7 +129,7 @@ export async function takeScreenShots(formData: FormData) {
       logger.error('An error occurred:', error);
     }
   }
-  const outPutFolder = 'output';
+  const outPutFolder = createOutputFolder();
 
   try {
     await screenshotsWithInterval(uploadPath, outPutFolder, interval);
@@ -146,7 +146,7 @@ export async function renameVideosWithMeta(formData: FormData) {
 
   await wrappedFs.ensureDirAsync(uploadPath);
   await saveVideos(videos);
-  const outPutFolder = 'output';
+  const outPutFolder = createOutputFolder();
 
   try {
     await renameIphoneVideosWithMeta(uploadPath, outPutFolder);
@@ -157,6 +157,12 @@ export async function renameVideosWithMeta(formData: FormData) {
   deleteFolderRecursive(uploadPath);
   return { isCompleted: true };
 }
+function createOutputFolder() {
+  const outPutFolder = 'output';
+  wrappedFs.ensureDirAsync(outPutFolder);
+  return outPutFolder;
+}
+
 async function saveVideos(videos: FormDataEntryValue[]) {
   for (const video of videos) {
     const file = video as File;
