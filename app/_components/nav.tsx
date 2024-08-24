@@ -1,9 +1,9 @@
-export default function Nav() {
+export default function Nav({ className }: { className: string }) {
   return (
-    <nav className='nav'>
+    <nav className={className}>
       <ul>
         <li>
-          <a href='/'>clip videos</a>
+          <a href='/'>clip videos-test</a>
         </li>
         <li>
           <a href='/convert'>Convert</a>
