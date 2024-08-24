@@ -1,5 +1,6 @@
 app/bak/*
 uploads
+# ignore all inside output rathen than the folder itself
 output/*
 # See https://help.github.com/articles/ignoring-files/ for more about ignoring files.
 
