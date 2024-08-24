@@ -5,7 +5,7 @@ import path from 'path';
 import { ClipInfo } from '../_components/definitions/definitions';
 import { ToColonedDigits } from '../_lib/date';
 import { removeFileExt } from './file-naming';
-
+import * as wrappedFs from './fs';
 function replaceColonWithDash(time: string) {
   return time.replace(/:/g, '-');
 }
@@ -16,6 +16,7 @@ async function clip(
   uploadPath: string = 'uploads'
 ) {
   const outPutFolder = 'output';
+  wrappedFs.ensureDirAsync(outPutFolder);
   for (let index = 0; index < clipInfo.length; index++) {
     console.log(`Start ${index + 1} of ${clipInfo.length}`);
     const {
