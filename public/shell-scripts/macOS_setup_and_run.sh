@@ -35,7 +35,7 @@ git clone https://github.com/streamwhite/batch-video-edit.git
 
 # Step 2: Go to the project folder
 echo "Navigating to the project folder..."
-cd batch-video-clips
+cd batch-video-edit
 
 # Step 3: Install dependencies
 echo "Installing dependencies..."

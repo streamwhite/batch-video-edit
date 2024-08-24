@@ -15,7 +15,7 @@ notes: copy those command and paste it in terminal(CMD or Powershell on Windows)
 1. clone this project in terminal, with command:
    `git clone https://github.com/streamwhite/batch-video-edit.git`
 2. go to the project folder after cloning, with command:
-   `cd batch-video-clips`
+   `cd batch-video-edit`
 3. install dependencies with command(yarn or pnpm will be fine):
    `npm install`
 4. build the project with command:

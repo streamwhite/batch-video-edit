@@ -6,17 +6,42 @@ install_dependencies() {
     echo "Updating package list..."
     sudo apt update
 
-    # Install Node.js
-    echo "Installing Node.js..."
-    sudo apt install -y nodejs npm
+    # Install curl if not already installed
+    if ! command -v curl &> /dev/null; then
+        echo "Installing curl..."
+        sudo apt install -y curl
+    else
+        echo "curl is already installed."
+    fi
 
-    # Install FFmpeg
-    echo "Installing FFmpeg..."
-    sudo apt install -y ffmpeg
+    # install nvm
+    if ! command -v nvm &> /dev/null; then
+        echo "Installing nvm..."
+        curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh  | bash
+        source ~/.bashrc
+    else
+        echo "nvm is already installed."
+    fi
 
-    # Install Git
-    echo "Installing Git..."
-    sudo apt install -y git
+    # reload bashrc
+    exec $SHELL
+
+
+    # Install FFmpeg if not already installed
+    if ! command -v ffmpeg &> /dev/null; then
+        echo "Installing FFmpeg..."
+        sudo apt install -y ffmpeg
+    else
+        echo "FFmpeg is already installed."
+    fi
+
+    # Install Git if not already installed
+    if ! command -v git &> /dev/null; then
+        echo "Installing Git..."
+        sudo apt install -y git
+    else
+        echo "Git is already installed."
+    fi
 }
 
 # Install Node.js, FFmpeg, and Git
@@ -28,7 +53,7 @@ git clone https://github.com/streamwhite/batch-video-edit.git
 
 # Step 2: Go to the project folder
 echo "Navigating to the project folder..."
-cd batch-video-clips
+cd batch-video-edit
 
 # Step 3: Install dependencies
 echo "Installing dependencies..."

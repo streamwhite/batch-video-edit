@@ -6,21 +6,41 @@ install_dependencies() {
     echo "Updating package list..."
     sudo dnf update -y
 
-    # Install Node.js
-    echo "Installing Node.js..."
-    sudo dnf install -y nodejs npm
+    # Check if Node.js is installed
+    if ! command -v node &> /dev/null; then
+        # Install Node.js
+        echo "Installing Node.js..."
+        sudo dnf install -y nodejs npm
+    else
+        echo "Node.js is already installed."
+    fi
 
-    # Install FFmpeg
-    echo "Installing FFmpeg..."
-    sudo dnf install -y ffmpeg
+    # Check if FFmpeg is installed
+    if ! command -v ffmpeg &> /dev/null; then
+        # Install FFmpeg
+        echo "Installing FFmpeg..."
+        sudo dnf install -y ffmpeg
+    else
+        echo "FFmpeg is already installed."
+    fi
 
-    # Install Git
-    echo "Installing Git..."
-    sudo dnf install -y git
+    # Check if Git is installed
+    if ! command -v git &> /dev/null; then
+        # Install Git
+        echo "Installing Git..."
+        sudo dnf install -y git
+    else
+        echo "Git is already installed."
+    fi
 
-    #install xdg-utils
-    echo "Installing xdg-utils..."
-    sudo dnf install -y xdg-utils
+    # Check if xdg-utils is installed
+    if ! command -v xdg-open &> /dev/null; then
+        # Install xdg-utils
+        echo "Installing xdg-utils..."
+        sudo dnf install -y xdg-utils
+    else
+        echo "xdg-utils is already installed."
+    fi
 }
 
 # Install Node.js, FFmpeg, and Git
@@ -32,7 +52,7 @@ git clone https://github.com/streamwhite/batch-video-edit.git
 
 # Step 2: Go to the project folder
 echo "Navigating to the project folder..."
-cd batch-video-clips
+cd batch-video-edit
 
 # Step 3: Install dependencies
 echo "Installing dependencies..."
