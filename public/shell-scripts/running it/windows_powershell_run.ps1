@@ -1,3 +1,4 @@
+# run this script in PowerShell
 
 # Step 1: Clone the project
 Write-Output "Cloning the project..."
