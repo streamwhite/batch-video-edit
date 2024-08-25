@@ -5,7 +5,7 @@ import path from 'path';
 import { ClipInfo } from '../_components/definitions/definitions';
 import { ToColonedDigits } from '../_lib/date';
 import { removeFileExt } from './file-naming';
-import * as wrappedFs from './fs';
+import * as wrappedFs from './file-system';
 function replaceColonWithDash(time: string) {
   return time.replace(/:/g, '-');
 }

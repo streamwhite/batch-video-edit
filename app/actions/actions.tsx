@@ -6,8 +6,12 @@ import { batchCompress } from '../_lib/compress';
 import { concatCTA as mergeCTA } from '../_lib/concat-cta';
 import { batchConvert } from '../_lib/convert';
 import { recoverFileName } from '../_lib/file-naming';
-import * as wrappedFs from '../_lib/fs';
-import { deleteFolderRecursive } from '../_lib/fs';
+import {
+  deleteFolderRecursive,
+  ensureDirAsync,
+  removeFilesInsideRecursive,
+  writeFileAsync,
+} from '../_lib/file-system';
 import { createLogger } from '../_lib/logger';
 import { screenshotsWithInterval } from '../_lib/screenshotsWithInterval';
 import { getVideosAndClips } from '../_lib/utils';
@@ -19,13 +23,13 @@ const logger = createLogger();
 
 export async function clipVideos(formData: FormData) {
   const { videos, clips } = getVideosAndClips(formData);
-
-  await wrappedFs.ensureDirAsync(uploadPath);
+  await removeFilesInsideRecursive(uploadPath);
+  await ensureDirAsync(uploadPath);
 
   for (const video of videos) {
     const file = video as File;
     try {
-      await wrappedFs.writeFileAsync(file, uploadPath);
+      await writeFileAsync(file, uploadPath);
     } catch (error) {
       logger.error('An error occurred:', error);
     }
@@ -41,12 +45,13 @@ export async function clipVideos(formData: FormData) {
 
 export async function convertVideos(formData: FormData) {
   const { videos } = getVideosAndClips(formData);
+  await removeFilesInsideRecursive(uploadPath);
 
-  await wrappedFs.ensureDirAsync(uploadPath);
+  await ensureDirAsync(uploadPath);
   for (const video of videos) {
     const file = video as File;
     try {
-      await wrappedFs.writeFileAsync(file, uploadPath);
+      await writeFileAsync(file, uploadPath);
     } catch (error) {
       logger.error('An error occurred:', error);
     }
@@ -66,12 +71,12 @@ export async function convertVideos(formData: FormData) {
 export async function concatCTA(formData: FormData) {
   const { videos } = getVideosAndClips(formData);
   const cta = formData.get('cta') as File;
-
-  await wrappedFs.ensureDirAsync(uploadPath);
+  await removeFilesInsideRecursive(uploadPath);
+  await ensureDirAsync(uploadPath);
   for (const video of [...videos, cta]) {
     const file = video as File;
     try {
-      await wrappedFs.writeFileAsync(file, uploadPath);
+      await writeFileAsync(file, uploadPath);
     } catch (error) {
       logger.error('An error occurred:', error);
     }
@@ -95,12 +100,13 @@ export async function concatCTA(formData: FormData) {
 
 export async function compressVideos(formData: FormData) {
   const { videos } = getVideosAndClips(formData);
+  await removeFilesInsideRecursive(uploadPath);
 
-  await wrappedFs.ensureDirAsync(uploadPath);
+  await ensureDirAsync(uploadPath);
   for (const video of videos) {
     const file = video as File;
     try {
-      await wrappedFs.writeFileAsync(file, uploadPath);
+      await writeFileAsync(file, uploadPath);
     } catch (error) {
       logger.error('An error occurred:', error);
     }
@@ -119,12 +125,12 @@ export async function compressVideos(formData: FormData) {
 export async function takeScreenShots(formData: FormData) {
   const { videos } = getVideosAndClips(formData);
   const interval = Number(formData.get('interval'));
-
-  await wrappedFs.ensureDirAsync(uploadPath);
+  await removeFilesInsideRecursive(uploadPath);
+  await ensureDirAsync(uploadPath);
   for (const video of videos) {
     const file = video as File;
     try {
-      await wrappedFs.writeFileAsync(file, uploadPath);
+      await writeFileAsync(file, uploadPath);
     } catch (error) {
       logger.error('An error occurred:', error);
     }
@@ -143,8 +149,9 @@ export async function takeScreenShots(formData: FormData) {
 
 export async function renameVideosWithMeta(formData: FormData) {
   const { videos } = getVideosAndClips(formData);
+  await removeFilesInsideRecursive(uploadPath);
 
-  await wrappedFs.ensureDirAsync(uploadPath);
+  await ensureDirAsync(uploadPath);
   await saveVideos(videos);
   const outPutFolder = createOutputFolder();
 
@@ -159,7 +166,7 @@ export async function renameVideosWithMeta(formData: FormData) {
 }
 function createOutputFolder() {
   const outPutFolder = 'output';
-  wrappedFs.ensureDirAsync(outPutFolder);
+  ensureDirAsync(outPutFolder);
   return outPutFolder;
 }
 
@@ -167,7 +174,7 @@ async function saveVideos(videos: FormDataEntryValue[]) {
   for (const video of videos) {
     const file = video as File;
     try {
-      await wrappedFs.writeFileAsync(file, uploadPath);
+      await writeFileAsync(file, uploadPath);
     } catch (error) {
       logger.error('An error occurred:', error);
     }
