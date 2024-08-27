@@ -1,5 +1,10 @@
 ## Features
 
+- **Much quicker:** It runs on your local device, with no need to upload to a server.
+- **Privacy and security:** Your data never leaves your device.
+- **Great time saving:** It can process multiple videos in batch.
+- **Budget friendly:** It is free for personal use.
+
 ## Usage
 
 - Install NodeJS runtime, refer to [NodeJS](https://nodejs.org/en/download/prebuilt-installer).
