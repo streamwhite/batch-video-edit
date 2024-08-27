@@ -34,3 +34,22 @@ install_dependencies() {
 
 # Install Node.js, FFmpeg, and Git
 install_dependencies
+
+echo "Cloning the project..."
+git clone https://github.com/streamwhite/batch-video-edit.git
+
+cd batch-video-edit
+
+echo "Installing dependencies..."
+npm install
+
+echo "Building the project..."
+npm run build
+
+echo "Starting the project..."
+npm run start &
+
+echo "Opening http://localhost:3000/ in the default web browser..."
+xdg-open http://localhost:3000/ &> /dev/null
+
+echo "Project setup and started successfully."

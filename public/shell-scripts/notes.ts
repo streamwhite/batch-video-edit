@@ -1,7 +1,10 @@
 export const content = {
   nonDeveloper: {
     setup: {
-      windows: 'use chocolatey',
+      windows: [
+        'use chocolatey',
+        'Set-ExecutionPolicy Bypass -Scope Process -Force',
+      ],
       'debian-ubuntu': '',
       mac: '',
     },

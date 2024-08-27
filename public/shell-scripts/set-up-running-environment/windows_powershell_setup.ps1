@@ -1,3 +1,7 @@
+# Set-ExecutionPolicy Bypass -Scope Process -Force
+
+# run this script in PowerShell with administrator privileges
+
 # Function to check if a package is installed and install it if not
 function Install-ChocoPackageIfNotInstalled {
     param (
@@ -21,3 +25,7 @@ Install-ChocoPackageIfNotInstalled -packageName "nodejs"
 
 # Check and install FFmpeg
 Install-ChocoPackageIfNotInstalled -packageName "ffmpeg-full"
+
+# Clone the project
+Write-Output "Cloning the project..."
+git clone https://github.com/streamwhite/batch-video-edit.git

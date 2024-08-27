@@ -30,3 +30,7 @@ install_homebrew
 install_package "node"
 install_package "ffmpeg"
 install_package "git"
+
+# Clone the project
+echo "Cloning the project..."
+git clone https://github.com/streamwhite/batch-video-edit.git
