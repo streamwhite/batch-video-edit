@@ -1,14 +1,13 @@
 ## Features
 
-## usage
+## Usage
 
-Install NodeJS runtime, refer to [NodeJS](https://nodejs.org/en/download/prebuilt-installer).
-Install ffmpeg(full), refer to [ffmpeg](https://www.ffmpeg.org/download.html).
-Install git, refer to [git](https://git-scm.com/downloads).
+- Install NodeJS runtime, refer to [NodeJS](https://nodejs.org/en/download/prebuilt-installer).
+- Install ffmpeg(full), refer to [ffmpeg](https://www.ffmpeg.org/download.html).
+- Install git, refer to [git](https://git-scm.com/downloads).
+- If you have any issues, search internet for tutorial to your specific operation system.
 
-If you have any issues, search internet for tutorial to your specific operation system.
-
-Notes: copy following command, paste it in terminal(CMD or Powershell on Windows) and run it.
+Note: copy following command, paste it in terminal(CMD or Powershell on Windows) and run it.
 
 1. clone this project in terminal, with command:
    `git clone https://github.com/streamwhite/batch-video-edit.git`
@@ -23,7 +22,7 @@ Notes: copy following command, paste it in terminal(CMD or Powershell on Windows
 6. open http://localhost:3000/ in your browser, it take seconds to load.
 7. start clip videos.
 
-## need your help
+## Need your help
 
 - Introduce me to a job. Refer to [about](https://me.orangeredcurve.com/) for what I can do and for more details.
 
