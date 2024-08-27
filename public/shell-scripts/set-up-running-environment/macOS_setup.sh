@@ -34,3 +34,21 @@ install_package "git"
 # Clone the project
 echo "Cloning the project..."
 git clone https://github.com/streamwhite/batch-video-edit.git
+
+
+# Change the working directory to the project directory
+cd batch-video-edit
+
+echo "Installing dependencies..."
+npm install
+
+echo "Building the project..."
+npm run build
+
+echo "Starting the project..."
+npm run start &
+
+echo "Opening http://localhost:3000/ in the default web browser..."
+open http://localhost:3000/
+
+echo "Project setup and started successfully."
