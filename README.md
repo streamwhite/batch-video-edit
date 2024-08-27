@@ -2,15 +2,13 @@
 
 ## usage
 
-### Prerequisites(for non-developer)
-
 Install NodeJS runtime, refer to [NodeJS](https://nodejs.org/en/download/prebuilt-installer).
-Install ffmpeg, refer to [ffmpeg](https://www.ffmpeg.org/download.html).
+Install ffmpeg(full), refer to [ffmpeg](https://www.ffmpeg.org/download.html).
 Install git, refer to [git](https://git-scm.com/downloads).
 
 If you have any issues, search internet for tutorial to your specific operation system.
 
-notes: copy those command and paste it in terminal(CMD or Powershell on Windows)(then press enter to run it).
+Notes: copy following command, paste it in terminal(CMD or Powershell on Windows) and run it.
 
 1. clone this project in terminal, with command:
    `git clone https://github.com/streamwhite/batch-video-edit.git`
@@ -20,23 +18,25 @@ notes: copy those command and paste it in terminal(CMD or Powershell on Windows)
    `npm install`
 4. build the project with command:
    `npm run build`
-5. start the project with command(you need only following steps to run for future usage):
+5. start the project with command(you only need steps starting from this one to run application after first setup):
    `npm run start`
 6. open http://localhost:3000/ in your browser, it take seconds to load.
 7. start clip videos.
 
 ## need your help
 
-- introduce me a job. refer to []() for what I can do and details.
-- donate to me(Paypal) if this tool helps you. I need money like you do to support a family.
-- hire me if you want more advanced batch video editing features. refer to []() for details.
-- open a issue if you have one, it also help others with same issues.
-- help translate it.
+- Introduce me to a job. Refer to [about](https://me.orangeredcurve.com/) for what I can do and for more details.
+
+- Donate to me via PayPal if this tool helps you. Just like you do, I need it to support my family.
+
+- Hire me if you want advanced batch video editing features.
+
+- Open an issue if you have one; it also helps others with the same issues.
+
+- Help translate it.
+
+- Contribute it.
 
 ## license
 
-commercial use
-
-## FAQ
-
-check typo, complete resume, adjust format for sentences and lisence and how to update.
+CC BY-NC
