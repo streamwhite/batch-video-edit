@@ -30,17 +30,11 @@ Note: copy following command, paste it in terminal(CMD or Powershell on Windows)
 ## Need your help
 
 - Share it with your friends or family.
-
 - Introduce me to a job. Refer to [about](https://me.orangeredcurve.com/) for what I can do and for more details.
-
 - Donate to me via PayPal if this tool helps you. Just like you do, I need it to support my family.
-
 - Hire me if you want advanced batch video editing features.
-
 - Open an issue if you have one; it also helps others with the same issues.
-
 - Help translate it.
-
 - Contribute it.
 
 ## license
