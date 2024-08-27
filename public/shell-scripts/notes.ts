@@ -2,13 +2,18 @@ export const content = {
   nonDeveloper: {
     setup: {
       windows: [
-        'use chocolatey',
+        'download powershell script from ',
         'Set-ExecutionPolicy Bypass -Scope Process -Force',
       ],
       'debian-ubuntu': '',
       mac: '',
     },
     run: {
+      windows: '',
+      linux: '',
+      mac: '',
+    },
+    update: {
       windows: '',
       linux: '',
       mac: '',
@@ -23,6 +28,11 @@ export const content = {
     run: {
       windows: '',
       'debian-ubuntu': '',
+      mac: '',
+    },
+    update: {
+      windows: '',
+      linux: '',
       mac: '',
     },
   },
