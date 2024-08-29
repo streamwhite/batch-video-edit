@@ -7,7 +7,7 @@ export async function batchCompress(inputPath: string, outputPath: string) {
     const videoPath = path.join(inputPath, video);
     const compressedVideoPath = path.join(outputPath, video);
     try {
-      await $`ffmpeg -i ${videoPath} -vcodec libx264 -crf 23 -preset medium ${compressedVideoPath}`;
+      await $`ffmpeg -i ${videoPath} -vcodec libx265 -crf 28 -preset slow ${compressedVideoPath}`;
     } catch (error) {
       console.error(`Error compressing file ${video}: ${error}`);
     }
