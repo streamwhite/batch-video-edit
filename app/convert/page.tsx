@@ -15,7 +15,6 @@ export default function Home() {
         <div className=''>
           <form action='' id='files-form'>
             <input type='file' name='video' id='files' multiple required />
-            {}
             <button
               id='start'
               type='submit'
