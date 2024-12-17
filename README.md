@@ -4,7 +4,7 @@
 - **Privacy and security:** Your data never leaves your device.
 - **Great time saving:** It can process multiple videos in batch.
 - **Budget friendly:** It is free for personal use.
-- **edit features:** create video clips in batch,merge CTA,
+- **edit features:** create video clips in batch, merge multiple videos to single action videos, take screenshots by interval, convert common video formats to 720p mp4
 
 ## Usage
 
