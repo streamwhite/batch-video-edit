@@ -37,7 +37,3 @@ Note: copy following command, paste it in terminal(CMD or Powershell on Windows)
 - Open an issue if you have one; it also helps others with the same issues.
 - Help translate it.
 - Contribute it.
-
-## license
-
-CC BY-NC
