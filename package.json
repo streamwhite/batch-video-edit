@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@next/bundle-analyzer": "^14.2.3",
+    "@next/bundle-analyzer": "^14.2.6",
     "date-fns": "^3.6.0",
     "execa": "^9.3.0",
     "filenamify": "^6.0.0",
